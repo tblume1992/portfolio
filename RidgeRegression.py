@@ -19,4 +19,4 @@ def Ridge(y, X, alpha, intercept = True):
     coefficients.columns = ['Coefficients']
     Ridge.coefficients = coefficients
     Ridge.fitted = np.dot(X,coefficients)
-    return coefficients, fitted
+
