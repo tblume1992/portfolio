@@ -17,5 +17,6 @@ def Ridge(y, X, alpha, intercept = True):
     esti = np.dot(X.T,y)
     coefficients = pd.DataFrame(np.round(np.dot(ridge,esti),3))
     coefficients.columns = ['Coefficients']
-    fitted = np.dot(X,coefficients)
+    Ridge.coefficients = coefficients
+    Ridge.fitted = np.dot(X,coefficients)
     return coefficients, fitted
