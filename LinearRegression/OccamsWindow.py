@@ -45,6 +45,7 @@ def OccamsWindow(y, X , window= 6):
         print('No models found in Window.  Please try a different window size!')
     else:    
         for i in range(len(bic_dataset)):
+            bic_dataset = np.divide(1,bic_dataset)
             weighted_coefficients.append((coefficient_dataset[i] * bic_dataset[i]) / sum(bic_dataset))
             weighted_se.append((se[i] * bic_dataset[i]) / sum(bic_dataset))
         weighted_coefficients = pd.Series(weighted_coefficients).apply(pd.Series) 
