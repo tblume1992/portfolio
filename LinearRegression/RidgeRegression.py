@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 
 class RidgeRegression():
-    def fit(y, X, alpha, intercept = True):
+    def fit(y, X, alpha = 0.1, intercept = True):
         OLS.intercept = intercept
         if intercept is True:
             constant = np.ones((X.shape[0],1))
