@@ -11,7 +11,7 @@ import numpy as np
 
 class RidgeRegression():
     def fit(y, X, alpha = 0.1, intercept = True):
-        OLS.intercept = intercept
+        RidgeRegression.intercept = intercept
         if intercept is True:
             constant = np.ones((X.shape[0],1))
             X = np.append(X,constant,1) 
@@ -23,7 +23,7 @@ class RidgeRegression():
         RidgeRegression.coefficients_ = coefficients
         RidgeRegression.fitted_ = np.dot(X,coefficients)
     def predict(X_test):
-        if OLS.intercept is True:
+        if RidgeRegression.intercept is True:
             constant = np.ones((X_test.shape[0],1))
             X_test = np.append(X_test,constant,1)
         RidgeRegression.predictions_ = np.dot(X_test,RidgeRegression.coefficients_)
